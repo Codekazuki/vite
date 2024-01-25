@@ -3,7 +3,7 @@ import { useState } from "react";
 const ErrorExample = () => {
   const [count, setCount] = useState(0);
   function handleIncrease() {
-    setCount(count + 1);
+    setCount((c) => c + 1);
   }
   return (
     <div>
