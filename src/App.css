@@ -4,3 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+
+.people {
+  background-color: yellow;
+  max-width: 75vw;
+}
+.person {
+  color: aqua;
+  background-color: cornsilk;
+  width: 75vw;
+  min-width: 25vw;
+}

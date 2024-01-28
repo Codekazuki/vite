@@ -12,13 +12,17 @@ const UseStateObject = () => {
   }
   return (
     <div>
-      {people.map((person) => {
-        const { name, id } = person;
-        return <h1 key={id}>{name}</h1>;
-      })}
-      <h1>{name}</h1>
-      <h1>{age}</h1>
-      <h1>{hobby}</h1>
+      <section className='people'>
+        {people.map((person) => {
+          const { name, id } = person;
+          return <h1 key={id}>{name}</h1>;
+        })}
+      </section>
+      <section className='person'>
+        <h1>{name}</h1>
+        <h1>{age}</h1>
+        <h1>{hobby}</h1>
+      </section>
       <button type='button' onClick={handleChangeUser} className='btn'>
         Change User
       </button>
