@@ -4,6 +4,7 @@ import { people } from "./data";
 const Mpa = () => {
   const [name, setName] = useState(data);
   const [pipu, setPipu] = useState(people);
+  console.log(setPipu);
   const handleDelete = (id) => {
     console.log(id);
     const newPeople = name.filter((person) => person.id !== id);
