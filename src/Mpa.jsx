@@ -2,7 +2,11 @@ import { useState } from "react";
 import { data } from "./data";
 const Mpa = () => {
   const [name, setName] = useState(data);
-  const handleDelete = () => {};
+  const handleDelete = (id) => {
+    console.log(id);
+    const newPeople = name.filter((person) => person.id !== id);
+    setName(newPeople);
+  };
   const handleDeleteAll = () => {
     setName([]);
   };
@@ -14,12 +18,12 @@ const Mpa = () => {
           <>
             <div key={id}>
               <h1>{name}</h1>
-              <button onClick={handleDelete}>delete</button>
+              <button onClick={() => handleDelete(id)}>delete</button>
             </div>
-            <button onClick={handleDeleteAll}>delete all</button>
           </>
         );
       })}
+      <button onClick={handleDeleteAll}>clear all</button>
     </div>
   );
 };
