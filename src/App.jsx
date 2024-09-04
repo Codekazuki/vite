@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Starter from "./tutorial/02-useEffect/starter/03-multiple-effects";
+import Starter from "./tutorial/01-useState/starter/01-error-example";
 
 function App() {
   return (

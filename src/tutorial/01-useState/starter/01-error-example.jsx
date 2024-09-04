@@ -5,10 +5,20 @@ const ErrorExample = () => {
   function handleIncrease() {
     setCount((c) => c + 1);
   }
+  function handleDecrease() {
+    setCount((c) => c - 1);
+  }
+  function handleReset() {
+    setCount(0);
+  }
   return (
     <div>
       <h2>{count}</h2>
       <button onClick={handleIncrease}>increase</button>
+
+      <button onClick={handleDecrease}>decrease</button>
+
+      <button onClick={handleReset}>reset</button>
     </div>
   );
 };
