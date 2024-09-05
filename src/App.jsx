@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Starter from "./tutorial/01-useState/starter/05-useState-gotcha";
+import Starter from "./tutorial/01-useState/starter/02-useState-basics";
 
 function App() {
   return (
