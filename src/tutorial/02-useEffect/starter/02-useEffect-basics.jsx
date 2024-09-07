@@ -12,7 +12,7 @@ const UseEffectBasics = () => {
     <div>
       <h1>count : {value}</h1>
       <button className='btn' onClick={() => setValue(value + 1)}>
-        click me
+        click me to Increase
       </button>
     </div>
   );
