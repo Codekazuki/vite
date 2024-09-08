@@ -9,13 +9,13 @@ const UseEffectBasics = () => {
   sayHello();
   useEffect(() => {
     console.log("effect here");
-  });
+  }, []);
 
   return (
     <div>
       <h1>count : {value}</h1>
       <button className='btn' onClick={() => setValue(value + 1)}>
-        click me to Increase
+        click me to Increase.
       </button>
     </div>
   );
