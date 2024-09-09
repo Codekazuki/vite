@@ -21,7 +21,15 @@ const FetchData = () => {
   return (
     <ul>
       {users.map((user) => {
-        <li>{user.login}</li>;
+        const { id, login, html_url, avatar_url, followers_url } = user;
+        return (
+          <li key={id}>
+            <img style={{ height: "60px" }} src={avatar_url} alt='' />
+            <a href={html_url}>profile</a>
+            <h1>{login}</h1>
+            <a href={followers_url}>check {login}'s followers</a>
+          </li>
+        );
       })}
     </ul>
   );
