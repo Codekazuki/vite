@@ -4,7 +4,8 @@ const UserChallenge = () => {
   const [user, setUser] = useState(null);
 
   const login = () => {
-    setUser(name);
+    const user = { name: "ade" };
+    setUser(user);
   };
 
   const logout = () => {
@@ -15,7 +16,7 @@ const UserChallenge = () => {
     <div>
       {user ? (
         <div>
-          <h1>Welcome{user.name} </h1>
+          <h1>Welcome {user.name} </h1>
           <button className='btn' onClick={logout}>
             logout
           </button>
