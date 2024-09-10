@@ -6,7 +6,7 @@ const ShortCircuitExamples = () => {
   // truthy
   const [name, setName] = useState("susan");
   const [user, setUser] = useState({ name: "john" });
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -26,6 +26,9 @@ const ShortCircuitExamples = () => {
           </div>
         )}
       </div>
+      <button style={{ backgroundColor: "greenyellow", padding: "8px 16px" }}>
+        {user ? "Submit" : "Edit"}
+      </button>
     </div>
   );
 };
