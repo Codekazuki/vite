@@ -29,7 +29,11 @@ const MultipleReturnsFetchData = () => {
   }
   return (
     <div>
-      <img src={user.avatar_url} alt='' />
+      <img
+        style={{ width: "192px", borderRadius: "20px" }}
+        src={user.avatar_url}
+        alt=''
+      />
       <h1>{user.name}</h1>
       <h4>{user.bio}</h4>
       <h4>{user.location}</h4>
