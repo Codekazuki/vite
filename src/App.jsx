@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples";
+import Starter from "./tutorial/03-conditional-rendering/starter/06-toggle-challenge";
 
 function App() {
   return (
