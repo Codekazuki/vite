@@ -11,16 +11,21 @@ const ToggleChallenge = () => {
 
   return (
     <div>
-      <h1>{address ? home : church}</h1>
-      <button
-        style={{ backgroundColor: "orangered", padding: "20px" }}
-        onClick={() => toggleButton()}
-      >
+      <h1 className={address ? "person" : "people"}>
+        {address ? home : church}
+      </h1>
+      <button className='btn' onClick={() => toggleButton()}>
         {" "}
         {address ? "show church address" : "show home address"}
       </button>
+
+      {address && <Place />}
     </div>
   );
+};
+
+const Place = () => {
+  return <h1>Hello World</h1>;
 };
 
 export default ToggleChallenge;
