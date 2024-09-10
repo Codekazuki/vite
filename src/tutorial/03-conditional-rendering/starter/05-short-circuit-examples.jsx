@@ -5,7 +5,7 @@ const ShortCircuitExamples = () => {
   const [text, setText] = useState("");
   // truthy
   const [name, setName] = useState("susan");
-  const [user, setUser] = useState({ name: "john" });
+  const [user, setUser] = useState({ name: "John" });
   const [isEditing, setIsEditing] = useState(true);
 
   useEffect(() => {
@@ -29,6 +29,7 @@ const ShortCircuitExamples = () => {
       <button style={{ backgroundColor: "greenyellow", padding: "8px 16px" }}>
         {user ? "Submit" : "Edit"}
       </button>
+      {user ? <h1> Welcome {user.name} </h1> : <h1>Please login</h1>}
     </div>
   );
 };
