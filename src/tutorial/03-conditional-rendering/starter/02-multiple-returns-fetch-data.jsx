@@ -17,6 +17,15 @@ const MultipleReturnsFetchData = () => {
     fetchUser();
   }, []);
 
-  return <h2>fetch data</h2>;
+  return user.map((user) => {
+    const { id, bio, avatar_url } = user;
+    return (
+      <div key={id}>
+        <img src={avatar_url} alt='' />
+        <h1>{bio}</h1>
+        <p></p>
+      </div>
+    );
+  });
 };
 export default MultipleReturnsFetchData;
