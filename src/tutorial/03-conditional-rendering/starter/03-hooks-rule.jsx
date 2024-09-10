@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Example = () => {
   const [condition, setCondition] = useState(true);
@@ -6,7 +6,11 @@ const Example = () => {
     // won't work
     const [state, setState] = useState(false);
   }
-
+  const checkName = (name) => {
+    return name || "anonymous";
+  };
+  console.log(checkName("Ayodele"));
+  console.log(checkName());
   // if (condition) {
   //   return <h2>Hello There</h2>;
   // }
