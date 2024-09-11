@@ -1,33 +1,30 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 const CleanupFunction = () => {
-  const [toggle, setToggle] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
-    const position = toggle ? true : false;
-    setToggle(position);
+    setToggle(!toggle);
   };
   return (
     <div>
       <h1>hello</h1>
-
-      <button
-        className='btn'
-        onClick={() => {
-          handleToggle;
-        }}
-      >
+      <button className='btn' onClick={handleToggle}>
         Toggle
       </button>
-      <h1>{toggle ? Acomponent : AnotherComponent}</h1>
+      {toggle && <Acomponent />}
     </div>
   );
 };
 function Acomponent() {
+  useEffect(() => {
+    console.log("checking for updates");
+  }, []);
   return <h1>Sample component</h1>;
 }
-function AnotherComponent() {
-  return <h1>Sample component 222</h1>;
-}
+// function AnotherComponent() {
+//   return <h1>Sample component 222</h1>;
+// }
 
 export default CleanupFunction;
