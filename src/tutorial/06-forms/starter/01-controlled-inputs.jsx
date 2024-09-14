@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 const ControlledInputs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const handleChange = (e) => {};
   return (
     <form className='form'>
       <h1>Controlled Input</h1>
@@ -8,10 +13,12 @@ const ControlledInputs = () => {
           name
         </label>
         <input
+          placeholder='input your name'
           id='name'
+          value={name}
+          onChange={handleChange}
           type='text'
           className='form-input'
-          placeholder='input your name'
         />
       </div>
       <div className='form-row'>
@@ -19,10 +26,12 @@ const ControlledInputs = () => {
           email
         </label>
         <input
+          placeholder='input your name'
           id='email'
+          value={email}
+          onChange={handleChange}
           type='email'
           className='form-input'
-          placeholder='input your name'
         />
       </div>
       {/* <div className='form-row'>
