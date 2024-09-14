@@ -189,6 +189,9 @@ ul {
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
+.form-label:hover {
+  color: var(--primary-300);
+}
 .form-input,
 .form-textarea {
   width: 100%;
