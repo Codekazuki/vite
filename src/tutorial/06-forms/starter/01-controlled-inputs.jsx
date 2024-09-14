@@ -1,4 +1,9 @@
 const ControlledInputs = () => {
-  return <h2>Controlled Inputs</h2>;
+  return (
+    <form className='form'>
+      <h1>Register</h1>
+      <input type='text' className='form-input' placeholder='input your name' />
+    </form>
+  );
 };
 export default ControlledInputs;
