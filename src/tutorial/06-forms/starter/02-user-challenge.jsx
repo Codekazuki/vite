@@ -4,6 +4,7 @@ import { useState } from "react";
 const UserChallenge = () => {
   const [name, setName] = useState("");
   const [users, setUsers] = useState(data);
+  console.log(data);
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -17,6 +18,10 @@ const UserChallenge = () => {
     const updatedUsers = [...users, newPerson];
     setUsers(updatedUsers);
     setName("");
+  };
+  const handleDelete = (id) => {
+    const newArray = users.filter((update) => update.id !== id);
+    setUsers(newArray);
   };
 
   return (
@@ -47,8 +52,10 @@ const UserChallenge = () => {
         const { id, name } = person;
         return (
           <div key={id}>
-            <h1>{name}</h1>
-            {/* <button className='btn'>{name}&apos;s details</button> */}
+            <h1>{name || "no name to display"}</h1>
+            <button onClick={() => handleDelete(id)} className='btn'>
+              ❌ Delete {name}
+            </button>
           </div>
         );
       })}
