@@ -48,17 +48,19 @@ const UserChallenge = () => {
       </form>
 
       <h1>Users</h1>
-      {users.map((person) => {
-        const { id, name } = person;
-        return (
-          <div key={id}>
-            <h1>{name || "no name to display"}</h1>
-            <button onClick={() => handleDelete(id)} className='btn'>
-              ❌ Delete {name}
-            </button>
-          </div>
-        );
-      })}
+      {users.length === 0
+        ? "No user at the moment"
+        : users.map((person) => {
+            const { id, name } = person;
+            return (
+              <div key={id}>
+                <h1>{name}</h1>
+                <button onClick={() => handleDelete(id)} className='btn'>
+                  ❌ Delete {name}
+                </button>
+              </div>
+            );
+          })}
     </div>
   );
 };
