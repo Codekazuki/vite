@@ -3,11 +3,18 @@ import { useState } from "react";
 const ControlledInputs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const handleChange = (e) => {
+  const handleChangeName = (e) => {
     setName(e.target.value);
   };
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email);
+  };
   return (
-    <form className='form'>
+    <form className='form' onSubmit={handleSubmit}>
       <h1>Controlled Input</h1>
 
       <div className='form-row'>
@@ -18,7 +25,7 @@ const ControlledInputs = () => {
           placeholder='input your name'
           id='name'
           value={name}
-          onChange={handleChange}
+          onChange={handleChangeName}
           type='text'
           className='form-input'
         />
@@ -28,10 +35,10 @@ const ControlledInputs = () => {
           email
         </label>
         <input
-          placeholder='input your name'
+          placeholder='input your email'
           id='email'
           value={email}
-          onChange={handleChange}
+          onChange={handleChangeEmail}
           type='email'
           className='form-input'
         />
