@@ -3,7 +3,9 @@ import { useState } from "react";
 const ControlledInputs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const handleChange = (e) => {};
+  const handleChange = (e) => {
+    setName(e.target.value);
+  };
   return (
     <form className='form'>
       <h1>Controlled Input</h1>
