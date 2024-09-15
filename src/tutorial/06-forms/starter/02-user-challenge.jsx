@@ -2,15 +2,21 @@ import { data } from "../../../data";
 import { useState } from "react";
 
 const UserChallenge = () => {
-  const [user, setUser] = useState("");
+  const [name, setName] = useState("");
   const [users, setUsers] = useState(data);
+
   const handleName = (e) => {
-    setUser(e.target.value);
+    setName(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form submitted");
+    if (!users) return;
+    const fakeId = Date.now();
+    const newPerson = { id: fakeId, name };
+    const updatedUsers = [...users, newPerson];
+    setUsers(updatedUsers);
+    setName("");
   };
 
   return (
@@ -24,7 +30,7 @@ const UserChallenge = () => {
           <input
             placeholder='input name here'
             id='name'
-            value={user}
+            value={name}
             onChange={handleName}
             type='text'
             className='form-input'
@@ -36,18 +42,16 @@ const UserChallenge = () => {
         </button>
       </form>
 
-      <div>
-        <h1>Users</h1>
-        {users.map((person) => {
-          const { id, name } = person;
-          return (
-            <div key={id}>
-              <h1>{name}</h1>
-              <button className='btn'>{name}&apos;s details</button>
-            </div>
-          );
-        })}
-      </div>
+      <h1>Users</h1>
+      {users.map((person) => {
+        const { id, name } = person;
+        return (
+          <div key={id}>
+            <h1>{name}</h1>
+            {/* <button className='btn'>{name}&apos;s details</button> */}
+          </div>
+        );
+      })}
     </div>
   );
 };
