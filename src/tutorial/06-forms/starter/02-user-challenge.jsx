@@ -13,8 +13,8 @@ const UserChallenge = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!users) return;
-    const fakeId = Date.now();
-    const newPerson = { id: fakeId, name };
+    // const fakeId = Date.now();
+    const newPerson = { id: name, name };
     const updatedUsers = [...users, newPerson];
     setUsers(updatedUsers);
     setName("");
