@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import "../src/index.css";
 
-import Starter from "./tutorial/06-forms/starter/04-other-inputs";
+import Starter from "./tutorial/07-useRef/starter/01-useRef-basics";
 
 function App() {
   return (
