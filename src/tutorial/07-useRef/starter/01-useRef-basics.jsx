@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 const UseRefBasics = () => {
   const [value, setValue] = useState(0);
-
+  const [name, setName] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("success");
+
+    setName("");
   };
 
   return (
@@ -15,7 +16,14 @@ const UseRefBasics = () => {
           <label htmlFor='name' className='form-label'>
             Name
           </label>
-          <input type='text' id='name' className='form-input' />
+          <input
+            placeholder='write name here'
+            id='name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type='text'
+            className='form-input'
+          />
         </div>
         <button type='submit' className='btn btn-block'>
           submit
