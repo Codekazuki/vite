@@ -8,6 +8,9 @@ const UseRefBasics = () => {
 
     setName("");
   };
+  const handleChange = (e) => {
+    setName(e.target.value);
+  };
 
   return (
     <div>
@@ -20,7 +23,7 @@ const UseRefBasics = () => {
             placeholder='write name here'
             id='name'
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleChange}
             type='text'
             className='form-input'
           />
