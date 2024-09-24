@@ -2,16 +2,16 @@ import { useState } from "react";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
-  const [name, setName] = useState("something");
+  const name = "something";
+  const [user, setUser] = useState(name);
   const logOut = () => {
     console.log("I don comot my hand");
-    setName(null);
+    setUser(null);
   };
 
   return (
     <div>
-      <h1>{name}</h1>
-      <NavLinks name={name} logOut={logOut} />
+      <NavLinks user={user} logOut={logOut} />
     </div>
   );
 };

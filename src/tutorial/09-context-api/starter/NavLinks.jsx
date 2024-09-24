@@ -1,9 +1,9 @@
 import UserContainer from "./UserContainer";
 
-const NavLinks = ({ logOut, name }) => {
+const NavLinks = ({ logOut, user }) => {
   return (
     <div>
-      <UserContainer name={name} logOut={logOut} />
+      <UserContainer user={user} logOut={logOut} />
     </div>
   );
 };
