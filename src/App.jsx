@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import "../src/index.css";
 
-import Starter from "./tutorial/09-context-api/starter/Navbar";
+import Starter from "./tutorial/09-context-api/final/context/Navbar";
 
 function App() {
   return (
