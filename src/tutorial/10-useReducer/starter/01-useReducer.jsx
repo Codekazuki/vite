@@ -1,18 +1,44 @@
-import React, { useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import { data, people } from "../../../data";
 
+const CLEAR_LIST = "CLEAR_LIST";
+const RESET_LIST = "RESET_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
+const defaultState = {
+  people: data,
+  isLoading: false,
+};
+const reducer = (state, action) => {
+  if (action.type === CLEAR_LIST) {
+    return { ...state, people: [] };
+  }
+  if (action.type === RESET_LIST) {
+    return {
+      ...state,
+      people: data,
+    };
+  }
+  if (action.type === REMOVE_ITEM) {
+    const newList = people.filter((person) => person.id !== id);
+    return {
+      ...state,
+      people: newList,
+    };
+  }
+  return state;
+};
 const ReducerBasics = () => {
-  const defaultState = () => {
-    people: data;
-  };
-
-  const reducer = () => {};
-
   const [state, dispatch] = useReducer(reducer, defaultState);
 
-  const removeItem = (id) => {};
-  const resetHandle = () => {};
-  const clearList = () => {};
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE_ITEM" });
+  };
+  const resetList = () => {
+    dispatch({ type: "RESET_LIST" });
+  };
+  const clearList = () => {
+    dispatch({ type: "CLEAR_LIST" });
+  };
   return (
     <section>
       <div>
@@ -21,12 +47,12 @@ const ReducerBasics = () => {
           return (
             <div key={id} className='item'>
               <h4>{name}</h4>
-              <button onClick={() => removeItem(id)}>remove</button>
+              <button onClick={(id) => removeItem(id)}>remove</button>
             </div>
           );
         })}
         {state.people.length === 0 ? (
-          <button className='btn' onClick={resetHandle}>
+          <button className='btn' onClick={resetList}>
             Reset
           </button>
         ) : (
