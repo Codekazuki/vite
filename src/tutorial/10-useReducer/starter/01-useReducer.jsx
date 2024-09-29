@@ -19,7 +19,9 @@ const reducer = (state, action) => {
     };
   }
   if (action.type === REMOVE_ITEM) {
-    const newList = people.filter((person) => person.id !== id);
+    let newList = state.people.filter(
+      (person) => person.id !== action.payload.id
+    );
     return {
       ...state,
       people: newList,
@@ -31,13 +33,13 @@ const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   const removeItem = (id) => {
-    dispatch({ type: "REMOVE_ITEM" });
+    dispatch({ type: REMOVE_ITEM, payload: { id } });
   };
   const resetList = () => {
-    dispatch({ type: "RESET_LIST" });
+    dispatch({ type: RESET_LIST });
   };
   const clearList = () => {
-    dispatch({ type: "CLEAR_LIST" });
+    dispatch({ type: CLEAR_LIST });
   };
   return (
     <section>
@@ -47,7 +49,7 @@ const ReducerBasics = () => {
           return (
             <div key={id} className='item'>
               <h4>{name}</h4>
-              <button onClick={(id) => removeItem(id)}>remove</button>
+              <button onClick={() => removeItem(id)}>remove</button>
             </div>
           );
         })}
